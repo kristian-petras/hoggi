@@ -30,9 +30,9 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Web Build
         run: |
-          mkdir -v -p build/web
+          mkdir -v -p build
           cd $PROJECT_PATH
-          godot -v --export-release "Web" ../build/index.html
+          godot -v --headless --export-release "Web" ../build/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
